@@ -2,8 +2,13 @@ import re
 import docx
 import spacy
 from pdfminer.high_level import extract_text
+import spacy.cli
 
-nlp = spacy.load("en_core_web_sm")
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    spacy.cli.download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 
 def extract_text_from_docx(file_path):
     doc = docx.Document(file_path)
