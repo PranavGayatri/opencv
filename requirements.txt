@@ -1,0 +1,8 @@
+streamlit
+pandas
+spacy
+pdfminer.six
+python-docx
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
